@@ -54,8 +54,6 @@ def main():
     img_url, caption = fetch_random_comic()
     filename = download_comic(img_url)
 
-    send_to_telegram(bot, chat_id, filename, caption)
-
     try:
         send_to_telegram(bot, chat_id, filename, caption)
     finally:
