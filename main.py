@@ -56,7 +56,10 @@ def main():
 
     send_to_telegram(bot, chat_id, filename, caption)
 
-    os.remove(filename)
+    try:
+        send_to_telegram(bot, chat_id, filename, caption)
+    finally:
+        os.remove(filename)
 
 
 if __name__ == "__main__":
